@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'task_provider.dart';
 import 'task_list_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => TaskProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
